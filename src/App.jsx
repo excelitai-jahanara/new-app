@@ -1,44 +1,27 @@
 import React from 'react';
 import './index.css';
-import Cards from './Cards';
-import Team from './TeamData';
 
+import SoftwareTeam from './SoftwareTeam';
+import FrontEndDev from './FrontEndDev';
 
-const eng = 'front end developer';
+const favT = 'Software Engineer';
 
-
-const Soft = () => {
- 
-
- if (eng === "software engineer") {
-  return (
-   <Cards
-    key={Team[0].id}
-    imgs={Team[0].imgs}
-    name={Team[0].name}
-    position={Team[0].position}
-    details={Team[0].details}
-            
-   />
-
-  );
+// const Favs = () => {
   
- 
- }
- else {
- return (
-   <Cards
-    key={Team[1].id}
-    imgs={Team[1].imgs}
-    name={Team[1].name}
-    position={Team[1].position}
-    details={Team[1].details}
-            
-   />
 
-  );
- }
-};
+
+//   if (favT === 'Software Engineer') {
+
+//    return  <SoftwareTeam/>
+
+// }
+// else {
+//   return <FrontEndDev/>
+// }
+// }
+
+
+
 
 
 const App = () =>(
@@ -47,8 +30,10 @@ const App = () =>(
        <h1 className='main-header'>Meet Our Team</h1>
       <div className='team-inner'>
         
-        {Team.map((val) => {
-          {/* return (
+        {(favT === 'Software Engineer') ?  <SoftwareTeam/> :  <FrontEndDev/> }
+        {/* <Favs/> */}
+        {/* {Team.map((val) => {
+          return (
             <Cards  
             key={val.id}
             imgs={val.imgs}
@@ -58,11 +43,11 @@ const App = () =>(
             
            />
 
-         ); */}
+         );
 
-         <Soft/>
+   
         }
-    )}
+    )} */}
       </div>
     </div>
   </>
